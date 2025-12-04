@@ -58,8 +58,8 @@ EXECUTION ORDER
 --------------------------------------------------------------------------------
 This script should be executed FIRST in the following sequence:
   1. ✓ 00_database_init.sql    (THIS SCRIPT)
-  2.   01_create_bronze_tables.sql
-  3.   02_load_bronze_data.sql
+  2. ✓ 01_ddl_bronze.sql
+  3. ✓ 02_proc_load_bronze_.sql
   4.   03_create_silver_tables.sql
   5.   04_transform_silver_data.sql
   6.   05_create_gold_schema.sql

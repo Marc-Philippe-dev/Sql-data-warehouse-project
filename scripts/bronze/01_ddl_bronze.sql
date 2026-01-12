@@ -50,9 +50,9 @@ CREATE TABLE bronze.crm_sales_details(
 	sls_ord_num NVARCHAR(50),
 	sls_prd_key NVARCHAR(50),
 	sls_cust_id INT ,
-	sls_order_dt DATETIME,
-	sls_ship_dt DATETIME,
-	sls_due_dt DATETIME,
+	sls_order_dt INT,
+	sls_ship_dt INT,
+	sls_due_dt INT,
 	sls_sales INT,
 	sls_quantity INT ,
 	sls_price INT	
@@ -108,3 +108,7 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 );
 GO
 PRINT '✓ Table "bronze.erp_px_cat_g1v2" created.';
+
+
+SELECT *
+FROM bronze.crm_sales_details;

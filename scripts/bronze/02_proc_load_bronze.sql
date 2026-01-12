@@ -1,5 +1,8 @@
+/*
+============================================= A stored procedure to load data into Bronze Layer tables from CSV files uwsing a BULK INSERT and parameters. ================================================ */
+
 CREATE OR ALTER PROCEDURE bronze.load_bronze 
-	@data_path NVARCHAR(MAX) = 'd:\1-Projects\data\Sql-data-warehouse-project\data\'
+	@data_path NVARCHAR(MAX) = 'C:\D-Data\1-Project\Data_Side_Project\Sql-data-warehouse-project\data\'
 AS
 BEGIN
 	DECLARE @start_time DATETIME , @end_time DATETIME  , @batch_start_time DATETIME  , @batch_end_time DATETIME ;
@@ -103,4 +106,4 @@ END;
 
 
 
-EXEC bronze.load_bronze @data_path = 'd:\1-Projects\data\Sql-data-warehouse-project\data\' ;
+EXEC bronze.load_bronze @data_path = 'C:\D-Data\1-Project\Data_Side_Project\Sql-data-warehouse-project\data\';

@@ -243,5 +243,3 @@ BEGIN
 END;
 
 EXEC silver.load_silver;
-
-select cst_key  from silver.crm_cust_info

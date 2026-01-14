@@ -10,8 +10,8 @@ CREATE TABLE bronze.crm_cust_info(
 	cst_key NVARCHAR(50),
 	cst_firstname NVARCHAR(50),
 	cst_lastname NVARCHAR(50),
-	cst_marital_status NVARCHAR(10),
-	cst_gender NVARCHAR(10),
+	cst_marital_status NVARCHAR(50),
+	cst_gender NVARCHAR(50),
 	cst_created_date DATE 
 );
 GO
@@ -109,6 +109,3 @@ CREATE TABLE bronze.erp_px_cat_g1v2 (
 GO
 PRINT '✓ Table "bronze.erp_px_cat_g1v2" created.';
 
-
-SELECT *
-FROM bronze.crm_sales_details;

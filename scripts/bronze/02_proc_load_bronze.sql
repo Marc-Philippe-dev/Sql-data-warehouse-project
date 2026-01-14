@@ -67,24 +67,24 @@ BEGIN
 		PRINT '>> Time Taken to Load Table bronze.erp_cust_az12 : ' + CAST(DATEDIFF(SECOND , @start_time , @end_time) AS NVARCHAR(10)) + ' Seconds' ;
 
 		SET	@start_time = GETDATE() ;
-		PRINT '>>Truncating Table : bronze.erp_prd_az12' ;
-		TRUNCATE TABLE bronze.erp_prd_az12 ;
-		PRINT '>> Inserting Data into Table : bronze.erp_prd_az12' ;
+		PRINT '>>Truncating Table : bronze.erp_loc_a101' ;
+		TRUNCATE TABLE bronze.erp_loc_a101 ;
+		PRINT '>> Inserting Data into Table : bronze.erp_loc_a101' ;
 		SET @file_path = @data_path + 'source_erp\LOC_A101.csv' ;
-		SET @sql = 'BULK INSERT bronze.erp_prd_az12 FROM ''' + @file_path + ''' WITH (FIRSTROW = 2, FIELDTERMINATOR = '','', TABLOCK)' ;
+		SET @sql = 'BULK INSERT bronze.erp_loc_a101 FROM ''' + @file_path + ''' WITH (FIRSTROW = 2, FIELDTERMINATOR = '','', TABLOCK)' ;
 		EXECUTE sp_executesql @sql ;
 		SET @end_time = GETDATE() ;
-		PRINT '>> Time Taken to Load Table bronze.erp_prd_az12 : ' + CAST(DATEDIFF(SECOND , @start_time , @end_time) AS NVARCHAR(10)) + ' Seconds' ;
+		PRINT '>> Time Taken to Load Table bronze.erp_loc_a101 : ' + CAST(DATEDIFF(SECOND , @start_time , @end_time) AS NVARCHAR(10)) + ' Seconds' ;
 
 		SET	@start_time = GETDATE() ;
-		PRINT '>>Truncating Table : bronze.erp_sales_az12' ;
-		TRUNCATE TABLE bronze.erp_sales_az12 ;
-		PRINT '>> Inserting Data into Table : bronze.erp_sales_az12' ;
+		PRINT '>>Truncating Table : bronze.erp_px_cat_g1v2' ;
+		TRUNCATE TABLE bronze.erp_px_cat_g1v2 ;
+		PRINT '>> Inserting Data into Table : bronze.erp_px_cat_g1v2' ;
 		SET @file_path = @data_path + 'source_erp\PX_CAT_G1V2.csv' ;
-		SET @sql = 'BULK INSERT bronze.erp_sales_az12 FROM ''' + @file_path + ''' WITH (FIRSTROW = 2, FIELDTERMINATOR = '','', TABLOCK)' ;
+		SET @sql = 'BULK INSERT bronze.erp_px_cat_g1v2 FROM ''' + @file_path + ''' WITH (FIRSTROW = 2, FIELDTERMINATOR = '','', TABLOCK)' ;
 		EXECUTE sp_executesql @sql ;
 		SET @end_time = GETDATE() ;
-		PRINT '>> Time Taken to Load Table bronze.erp_sales_az12 : ' + CAST(DATEDIFF(SECOND , @start_time , @end_time) AS NVARCHAR(10)) + ' Seconds' ;
+		PRINT '>> Time Taken to Load Table bronze.erp_px_cat_g1v2 : ' + CAST(DATEDIFF(SECOND , @start_time , @end_time) AS NVARCHAR(10)) + ' Seconds' ;
 		SET @batch_end_time = GETDATE() ;
 		PRINT '==================================='
 		PRINT '✓ Bronze Layer Loaded Successfully in ' + CAST(DATEDIFF(SECOND , @batch_start_time , @batch_end_time) AS NVARCHAR(10)) + ' Seconds'
